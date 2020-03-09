@@ -1,0 +1,12 @@
+<form [formGroup]="cityForm" > 
+  <!-- (keyup.enter)="weatherInput(cityForm.value.cityName)" -->
+  <ion-input type="text" formControlName="cityName" color="primary" >
+    <ion-button (click)="weatherInput(cityForm.value.cityName)" [routerLink]="['/city']">
+     <ion-icon md="md-add-circle"></ion-icon>
+    </ion-button>
+  </ion-input>
+  <ion-item>
+    <ion-label>Save your city</ion-label>
+    <ion-toggle slot="start" name="cantaloupe" color="medium" checked></ion-toggle>
+  </ion-item>
+</form>

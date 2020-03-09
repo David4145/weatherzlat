@@ -1,0 +1,7 @@
+{
+  "name": "weatherzlat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
