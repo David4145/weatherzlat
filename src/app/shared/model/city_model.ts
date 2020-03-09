@@ -20,6 +20,6 @@ export class City
     public tempMin: number;
     
     
-    //public prevision: Prevision;
+    // public prevision: Prevision;
     
 }

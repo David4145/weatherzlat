@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { City } from '../shared/model/city_model';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CityService } from '../shared/service/city.service';
-import { PrevisionService} from '../shared/service/prevision.service';
+// import { PrevisionService} from '../shared/service/prevision.service';
 
 @Component({
   selector: 'app-city-list',
@@ -16,7 +16,7 @@ export class CityListComponent implements OnInit {
   constructor(
     private cityService: CityService,
     private formBuilder: FormBuilder,
-    private previsionService : PrevisionService
+    // private previsionService : PrevisionService
   ) {
     this.cityForm = this.formBuilder.group({
       cityName: [''],
