@@ -6,5 +6,17 @@ export class Prevision {
 
     temp : number;
 
+    dateTwo : Date;
+
+    descriptionTwo : string;
+
+    tempTwo : number;
+
+    dateThird : Date;
+
+    descriptionThird : string;
+
+    tempThird : number;
+
     
  }
