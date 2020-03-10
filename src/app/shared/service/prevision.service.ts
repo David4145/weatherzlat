@@ -34,13 +34,13 @@ export class PrevisionService {
                     console.log(forecast);
                     this.hydrateForecast.date = forecast.list[8].dt_txt;
                     this.hydrateForecast.description = forecast.list[8].weather[0].description;
-                    this.hydrateForecast.temp = forecast.list[8].main.temp;
+                    this.hydrateForecast.temp = Math.round(forecast.list[8].main.temp);
                     this.hydrateForecast.dateTwo = forecast.list[16].dt_txt;
                     this.hydrateForecast.descriptionTwo = forecast.list[16].weather[0].description;
-                    this.hydrateForecast.tempTwo = forecast.list[16].main.temp;
+                    this.hydrateForecast.tempTwo = Math.round(forecast.list[16].main.temp);
                     this.hydrateForecast.dateThird = forecast.list[24].dt_txt;
                     this.hydrateForecast.descriptionThird = forecast.list[24].weather[0].description;
-                    this.hydrateForecast.tempThird = forecast.list[24].main.temp;
+                    this.hydrateForecast.tempThird = Math.round(forecast.list[24].main.temp);
                     this.prevision = this.hydrateForecast;
                     console.log('ma Prevision');
                     console.log(this.prevision);

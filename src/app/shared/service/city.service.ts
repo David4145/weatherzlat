@@ -34,12 +34,12 @@ export class CityService {
           this.get(name)
             .then((data) => {
               this.dataWeather['cityName'] = data['name'];
-              this.dataWeather['tempActual'] = data['main']['temp'];
+              this.dataWeather['tempActual'] = Math.round(data['main']['temp']) ;
               this.dataWeather['description'] = data['weather'][0]['description'];
               this.dataWeather['windSpeed'] = data['wind']['speed'];
               this.dataWeather['humidity'] = data['main']['humidity'];
-              this.dataWeather['tempMax'] = data['main']['temp_max'];
-              this.dataWeather['tempMin'] = data['main']['temp_min'];
+              this.dataWeather['tempMax'] = Math.round(data['main']['temp_max']);
+              this.dataWeather['tempMin'] = Math.round(data['main']['temp_min']);
               resolve(this.dataWeather);
             })
         });
@@ -57,12 +57,12 @@ export class CityService {
       this.getGeolocApi()
         .then((geolocVar) => {
           this.dataWeather.cityName = geolocVar.name;
-          this.dataWeather.tempActual = geolocVar.main.temp;
+          this.dataWeather.tempActual = Math.round(geolocVar.main.temp);
           this.dataWeather.description = geolocVar.weather[0].description;
           this.dataWeather.windSpeed = geolocVar.wind.speed;
           this.dataWeather.humidity = geolocVar.main.humidity;
-          this.dataWeather.tempMax = geolocVar.main.temp_max;
-          this.dataWeather.tempMin = geolocVar.main.temp_min;
+          this.dataWeather.tempMax = Math.round(geolocVar.main.temp_max);
+          this.dataWeather.tempMin = Math.round(geolocVar.main.temp_min);
           this.previsionService.displayForecast(this.dataWeather.cityName);
           resolve(this.dataWeather)
         })
