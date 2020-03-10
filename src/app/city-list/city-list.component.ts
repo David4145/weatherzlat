@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { City } from '../shared/model/city_model';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CityService } from '../shared/service/city.service';
-// import { PrevisionService} from '../shared/service/prevision.service';
+import { CityListService } from '../shared/service/cityList.service';
+
+
 
 @Component({
   selector: 'app-city-list',
@@ -11,12 +13,12 @@ import { CityService } from '../shared/service/city.service';
 })
 export class CityListComponent implements OnInit {
   private cityForm: FormGroup;
-  private city: City[] = [];
+  private cities: City[]= [];
 
   constructor(
     private cityService: CityService,
+    private cityListService : CityListService,
     private formBuilder: FormBuilder,
-    // private previsionService : PrevisionService
   ) {
     this.cityForm = this.formBuilder.group({
       cityName: [''],
@@ -24,13 +26,10 @@ export class CityListComponent implements OnInit {
   }
   public weatherInput(inputValue) {
     const name = inputValue;
-    console.log('je suis dans le weatherInput');
-    console.log(name);
     this.cityService.displayWeather(name);
+    this.cities.push(name);
+    console.log(this.cities);
   }
 
   ngOnInit() { }
-
- 
-
 }
