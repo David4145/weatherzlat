@@ -14,6 +14,10 @@ export class PrevisionService {
         private http: HttpClient,
     ) { }
 
+    public getPrevision(): Prevision {
+        return this.hydrateForecast;
+    }
+
     public apiForecast(name): Promise<any> {
         console.log('je suis dans le apiForecast');
         console.log(name);

@@ -19,26 +19,13 @@ constructor(
   private previsionService : PrevisionService,
   
   ) { 
-    
-    
-   
+    this.prevision = this.previsionService.getPrevision()
+    console.log(this.prevision);    
   }
   
   ngOnInit() {
   }
   
   ngAfterViewInit(){
-  }
-  
-  public hydrateForecast(){
-    this.previsionService.displayForecast(name)
-    .then((prevision)=>{
-      console.log("j'appel mon forecast dans le component");
-      console.log(prevision);
-      console.log(name);
-    })
-    .catch((reject)=>{
-      console.log('erreur');
-    }) 
   }
 }
