@@ -15,7 +15,7 @@ export class CityComponent implements OnInit, AfterViewInit {
     private cityService: CityService,
   ) {
     this.city = cityService.getCity();
-    console.log(this.city);
+    
     
   }
 

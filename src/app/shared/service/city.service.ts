@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { City } from '../model/city_model';
 import { HttpClient } from '@angular/common/http';
-// import { PrevisionService } from './prevision.service';
+import { PrevisionService } from './prevision.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class CityService {
 
   constructor(
     private http: HttpClient,
-    // private previsionService: PrevisionService,
+    private previsionService: PrevisionService,
   ) {
 
   }
@@ -29,8 +29,8 @@ export class CityService {
     return new Promise((resolve, reject) => {
       console.log('je suis dans displayWeather');
       console.log(name);
-      // this.previsionService.displayForecast(name)
-        // .then(() => {
+      this.previsionService.displayForecast(name)
+        .then(() => {
           this.get(name)
             .then((data) => {
               this.dataWeather['cityName'] = data['name'];
@@ -41,7 +41,7 @@ export class CityService {
               this.dataWeather['tempMax'] = data['main']['temp_max'];
               this.dataWeather['tempMin'] = data['main']['temp_min'];
               resolve(this.dataWeather);
-            // )}
+            })
         });
     })
   }
@@ -63,7 +63,7 @@ export class CityService {
           this.dataWeather.humidity = geolocVar.main.humidity;
           this.dataWeather.tempMax = geolocVar.main.temp_max;
           this.dataWeather.tempMin = geolocVar.main.temp_min;
-          // this.previsionService.displayForecast(this.dataWeather.cityName);
+          this.previsionService.displayForecast(this.dataWeather.cityName);
           resolve(this.dataWeather)
         })
         .catch((error) => console.log('error dans la geoloc'))
