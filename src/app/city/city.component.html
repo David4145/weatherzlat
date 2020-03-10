@@ -1,8 +1,8 @@
-<!-- <ion-item *ngIf='!cityName'>
-    <ion-spinner color="tertiary"></ion-spinner>
-  </ion-item>  -->
+<ion-item *ngIf="!this.city.cityName">
+    <ion-spinner style="text-align: center" color="danger"></ion-spinner>
+  </ion-item> 
 
-<!-- *ngIf='cityName' -->
+
 <ion-header class="toolbar" *ngIf="city && city.cityName">
     <ion-title style="text-align: center">
         <ion-button [routerLink]="['/city-list']">

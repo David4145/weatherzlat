@@ -29,17 +29,6 @@ export class CityComponent implements OnInit, AfterViewInit {
       .then((dataWeather) => {})
     }
   }
-
-  // public hydrateWeather() {
-  //   this.cityService.displayWeather(name)
-  //     .then((dataWeather) => {
-  //       console.log('dans le hydrateWeather');
-  //       this.city = dataWeather
-  //     })
-  //     .catch(() => {
-  //       console.log('erreur de display dans le component');
-  //     })
-  // }
 }
 
 
