@@ -2,16 +2,16 @@
   <ion-item>
     <ion-label type="text" style="text-align: center">
      
-      <li>{{this.prevision.date}}</li>
+      <li>{{this.prevision.date| date:"dd/MM"}}</li>
       <li>{{this.prevision.description}}</li>
       <li>
         <ion-icon name="thermometer">
         </ion-icon>
-        {{this.prevision.temp}} °C
+        {{this.prevision.temp }} °C
       </li>
       <br />
      
-      <li>{{this.prevision.dateTwo}}</li>
+      <li>{{this.prevision.dateTwo | date:"dd/MM"}}</li>
       <li>{{this.prevision.descriptionTwo}}</li>
       <li>
         <ion-icon name="thermometer">
@@ -20,12 +20,12 @@
       </li>
      
       <br />
-      <li>{{this.prevision.dateThird}}</li>
+      <li>{{this.prevision.dateThird | date:"dd/MM"}}</li>
       <li>{{this.prevision.descriptionThird}}</li>
       <li>
         <ion-icon name="thermometer">
         </ion-icon>
-        {{this.prevision.tempThird}} °C
+        {{this.prevision.tempThird }} °C
       </li>
     </ion-label>
   </ion-item>

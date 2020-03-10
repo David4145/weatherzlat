@@ -27,8 +27,6 @@ export class CityService {
 
   public displayWeather(name): any {
     return new Promise((resolve, reject) => {
-      console.log('je suis dans displayWeather');
-      console.log(name);
       this.previsionService.displayForecast(name)
         .then(() => {
           this.get(name)

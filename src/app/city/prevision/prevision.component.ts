@@ -19,8 +19,7 @@ constructor(
   private previsionService : PrevisionService,
   
   ) { 
-    this.prevision = this.previsionService.getPrevision()
-    console.log(this.prevision);    
+    this.prevision = this.previsionService.getPrevision()  
   }
   
   ngOnInit() {
