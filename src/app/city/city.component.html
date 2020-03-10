@@ -3,7 +3,7 @@
   </ion-item>  -->
 
 <!-- *ngIf='cityName' -->
-<ion-header class="toolbar" *ngIf="city">
+<ion-header class="toolbar" *ngIf="city && city.cityName">
     <ion-title style="text-align: center">
         <ion-button [routerLink]="['/city-list']">
             <ion-icon name="clipboard"></ion-icon>

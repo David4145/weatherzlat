@@ -10,42 +10,36 @@ import { City } from '../shared/model/city_model';
 })
 export class CityComponent implements OnInit, AfterViewInit {
   private city: City;
-  private condition: boolean;
+ 
   constructor(
     private cityService: CityService,
   ) {
-
+    this.city = cityService.getCity();
+    console.log(this.city);
+    
   }
 
   ngOnInit() {
 
   }
 
-  ngAfterViewInit() {
-    if (true === this.condition) {
-      return (
-        this.condition = false,
-        console.log(this.condition),
-        this.cityService.hydrateGeoloc()
-          .then((dataWeather) => {
-            this.city = dataWeather
-          })
-      )
+  ngAfterViewInit() { 
+    if(!this.city.cityName){
+      this.cityService.hydrateGeoloc()
+      .then((dataWeather) => {})
     }
-    this.hydrateWeather()
   }
 
-  public hydrateWeather() {
-    this.cityService.displayWeather(name)
-      .then((dataWeather) => {
-        console.log('dans le hydrateWeather');
-
-        this.city = dataWeather
-      })
-      .catch(() => {
-        console.log('erreur de display dans le component');
-      })
-  }
+  // public hydrateWeather() {
+  //   this.cityService.displayWeather(name)
+  //     .then((dataWeather) => {
+  //       console.log('dans le hydrateWeather');
+  //       this.city = dataWeather
+  //     })
+  //     .catch(() => {
+  //       console.log('erreur de display dans le component');
+  //     })
+  // }
 }
 
 

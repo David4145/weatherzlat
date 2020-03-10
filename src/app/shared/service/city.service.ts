@@ -21,6 +21,10 @@ export class CityService {
 
   }
 
+  public getCity(): City {
+    return this.dataWeather;
+  }
+
   public displayWeather(name): any {
     return new Promise((resolve, reject) => {
       console.log('je suis dans displayWeather');
