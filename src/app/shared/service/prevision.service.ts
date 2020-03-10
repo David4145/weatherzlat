@@ -21,7 +21,7 @@ export class PrevisionService {
     public apiForecast(name): Promise<any> {
         console.log('je suis dans le apiForecast');
         console.log(name);
-        return this.http.get<any>('https://api.openweathermap.org/data/2.5/forecast/?q=' + name + '&units=metric&appid=0b238560ac9a9de8f6933200cd469dd0')
+        return this.http.get<any>('https://api.openweathermap.org/data/2.5/forecast/?q=' + name + '&units=metric&lang=fr&appid=0b238560ac9a9de8f6933200cd469dd0')
             .toPromise()
     }
 

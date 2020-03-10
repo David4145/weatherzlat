@@ -1,23 +1,32 @@
 <form *ngIf="prevision">
   <ion-item>
-    <ion-label  type="text" style="text-align: center">
-      Day 1:
-      <br />
+    <ion-label type="text" style="text-align: center">
+     
       <li>{{this.prevision.date}}</li>
       <li>{{this.prevision.description}}</li>
-      <li>{{this.prevision.temp}}</li>
+      <li>
+        <ion-icon name="thermometer">
+        </ion-icon>
+        {{this.prevision.temp}}
+      </li>
       <br />
-      Day 2:
-      <br />
+     
       <li>{{this.prevision.dateTwo}}</li>
       <li>{{this.prevision.descriptionTwo}}</li>
-      <li>{{this.prevision.tempTwo}}</li>
-      <br />
-      Day 3:
+      <li>
+        <ion-icon name="thermometer">
+        </ion-icon>
+        {{this.prevision.tempTwo}}
+      </li>
+     
       <br />
       <li>{{this.prevision.dateThird}}</li>
       <li>{{this.prevision.descriptionThird}}</li>
-      <li>{{this.prevision.tempThird}}</li>
+      <li>
+        <ion-icon name="thermometer">
+        </ion-icon>
+        {{this.prevision.tempThird}}
+      </li>
     </ion-label>
   </ion-item>
 </form>

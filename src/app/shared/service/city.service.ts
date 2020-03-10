@@ -76,7 +76,7 @@ export class CityService {
         .then((position) => {
           this.longitude = position.coords.longitude;
           this.latitude = position.coords.latitude;
-          const geolocVar = this.http.get<any>('https://api.openweathermap.org/data/2.5/weather?lat=' + this.latitude + '&lon=' + this.longitude + '&units=metric&appid=0b238560ac9a9de8f6933200cd469dd0')
+          const geolocVar = this.http.get<any>('https://api.openweathermap.org/data/2.5/weather?lat=' + this.latitude + '&lon=' + this.longitude + '&units=metric&lang=fr&appid=0b238560ac9a9de8f6933200cd469dd0')
             .toPromise();
           resolve(geolocVar)
         })
